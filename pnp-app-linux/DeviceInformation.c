@@ -124,7 +124,7 @@ void TrimString(char* Buffer)
 
     length = strlen(ptr);
 
-    while((length > 0) && ((ptr[length-1] == '\n') || (ptr[length-1] == '\r') || isspace(ptr[length-1]) || ptr[length-1] == '.'))
+    while((length > 0) && ((ptr[length-1] == '\n') || (ptr[length-1] == '\r') || (ptr[length-1] == '"') || isspace(ptr[length-1]) || ptr[length-1] == '.'))
     {
         ptr[length - 1] ='\0';
         length--;
