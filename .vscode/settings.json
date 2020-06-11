@@ -1,0 +1,28 @@
+{
+    "cSpell.words": [
+        "Accelero",
+        "DWIN",
+        "Megneto",
+        "OPENWRT",
+        "OSNAME",
+        "SWVERSION",
+        "aziotsharedutil",
+        "deviceinformation",
+        "digitaltwin",
+        "from",
+        "hkey",
+        "hresult",
+        "info",
+        "lpbyte",
+        "megnetometer",
+        "mkdir",
+        "pbios",
+        "psmbiosheader",
+        "smbois",
+        "umqtt",
+        "win"
+    ],
+    "files.associations": {
+        "SensorTileBox.h": "c"
+    }
+}

@@ -1,0 +1,317 @@
+{
+  "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox_pnp:1",
+  "@type": "CapabilityModel",
+  "implements": [
+    {
+      "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox_pnp:deviceinfo:1",
+      "@type": "InterfaceInstance",
+      "name": "DeviceInformation",
+      "schema": {
+        "@id": "urn:azureiot:DeviceManagement:DeviceInformation:1",
+        "@type": "Interface",
+        "displayName": {
+          "en": "Device information"
+        },
+        "contents": [
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:manufacturer:1",
+            "@type": "Property",
+            "comment": "Company name of the device manufacturer. This could be the same as the name of the original equipment manufacturer (OEM). Ex. Contoso.",
+            "displayName": {
+              "en": "Manufacturer"
+            },
+            "name": "manufacturer",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:model:1",
+            "@type": "Property",
+            "comment": "Device model name or ID. Ex. Surface Book 2.",
+            "displayName": {
+              "en": "Device model"
+            },
+            "name": "model",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:swVersion:1",
+            "@type": "Property",
+            "comment": "Version of the software on your device. This could be the version of your firmware. Ex. 1.3.45",
+            "displayName": {
+              "en": "Software version"
+            },
+            "name": "swVersion",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:osName:1",
+            "@type": "Property",
+            "comment": "Name of the operating system on the device. Ex. Windows 10 IoT Core.",
+            "displayName": {
+              "en": "Operating system name"
+            },
+            "name": "osName",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:processorArchitecture:1",
+            "@type": "Property",
+            "comment": "Architecture of the processor on the device. Ex. x64 or ARM.",
+            "displayName": {
+              "en": "Processor architecture"
+            },
+            "name": "processorArchitecture",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:processorManufacturer:1",
+            "@type": "Property",
+            "comment": "Name of the manufacturer of the processor on the device. Ex. Intel.",
+            "displayName": {
+              "en": "Processor manufacturer"
+            },
+            "name": "processorManufacturer",
+            "schema": "string"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:totalStorage:1",
+            "@type": "Property",
+            "comment": "Total available storage on the device in kilobytes. Ex. 2048000 kilobytes.",
+            "displayName": {
+              "en": "Total storage"
+            },
+            "name": "totalStorage",
+            "displayUnit": {
+              "en": "kilobytes"
+            },
+            "schema": "long"
+          },
+          {
+            "@id": "urn:azureiot:DeviceManagement:DeviceInformation:totalMemory:1",
+            "@type": "Property",
+            "comment": "Total available memory on the device in kilobytes. Ex. 256000 kilobytes.",
+            "displayName": {
+              "en": "Total memory"
+            },
+            "name": "totalMemory",
+            "displayUnit": {
+              "en": "kilobytes"
+            },
+            "schema": "long"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox_pnp:sensors:1",
+      "@type": "InterfaceInstance",
+      "displayName": {
+        "en": "SensorTile.Box"
+      },
+      "name": "SensorTile_Box",
+      "schema": {
+        "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:1",
+        "@type": "Interface",
+        "displayName": {
+          "en": "SensorTile.Box"
+        },
+        "contents": [
+          {
+            "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:temperature:1",
+            "@type": [
+              "Telemetry",
+              "SemanticType/Temperature"
+            ],
+            "displayName": {
+              "en": "Temperature"
+            },
+            "name": "temperature",
+            "displayUnit": {
+              "en": "C"
+            },
+            "schema": "float",
+            "unit": "Units/Temperature/celsius"
+          },
+          {
+            "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:pressure:1",
+            "@type": [
+              "Telemetry",
+              "SemanticType/Pressure"
+            ],
+            "displayName": {
+              "en": "Pressure"
+            },
+            "name": "pressure",
+            "displayUnit": {
+              "en": "hPa"
+            },
+            "schema": "float"
+          },
+          {
+            "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:humidity:1",
+            "@type": [
+              "Telemetry",
+              "SemanticType/Humidity"
+            ],
+            "displayName": {
+              "en": "Humidity"
+            },
+            "name": "humidity",
+            "displayUnit": {
+              "en": "%"
+            },
+            "schema": "float",
+            "unit": "Units/Humidity/percent"
+          },
+          {
+            "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:accelero:1",
+            "@type": "Telemetry",
+            "displayName": {
+              "en": "Accelerometer"
+            },
+            "name": "accelero",
+            "displayUnit": {
+              "en": "mg"
+            },
+            "schema": {
+              "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:accelero:xyz:1",
+              "@type": "Object",
+              "displayName": {
+                "en": "Object"
+              },
+              "fields": [
+                {
+                  "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:accelero:xyz:X:1",
+                  "@type": "SchemaField",
+                  "displayName": {
+                    "en": "X"
+                  },
+                  "name": "X",
+                  "schema": "integer"
+                },
+                {
+                  "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:accelero:xyz:Y:1",
+                  "@type": "SchemaField",
+                  "displayName": {
+                    "en": "Y"
+                  },
+                  "name": "Y",
+                  "schema": "integer"
+                },
+                {
+                  "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:accelero:xyz:Z:1",
+                  "@type": "SchemaField",
+                  "displayName": {
+                    "en": "Z"
+                  },
+                  "name": "Z",
+                  "schema": "integer"
+                }
+              ]
+            }
+          },
+          {
+            "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:gyro:1",
+            "@type": "Telemetry",
+            "displayName": {
+              "en": "Gyroscope"
+            },
+            "name": "gyro",
+            "displayUnit": {
+              "en": "mdps"
+            },
+            "schema": {
+              "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:gyro:xyz:1",
+              "@type": "Object",
+              "displayName": {
+                "en": "Object"
+              },
+              "fields": [
+                {
+                  "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:gyro:xyz:X:1",
+                  "@type": "SchemaField",
+                  "displayName": {
+                    "en": "X"
+                  },
+                  "name": "X",
+                  "schema": "integer"
+                },
+                {
+                  "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:gyro:xyz:Y:1",
+                  "@type": "SchemaField",
+                  "displayName": {
+                    "en": "Y"
+                  },
+                  "name": "Y",
+                  "schema": "integer"
+                },
+                {
+                  "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:gyro:xyz:Z:1",
+                  "@type": "SchemaField",
+                  "displayName": {
+                    "en": "Z"
+                  },
+                  "name": "Z",
+                  "schema": "integer"
+                }
+              ]
+            }
+          },
+          {
+            "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:megneto:1",
+            "@type": "Telemetry",
+            "displayName": {
+              "en": "Megnetometer"
+            },
+            "name": "megneto",
+            "displayUnit": {
+              "en": "mG"
+            },
+            "schema": {
+              "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:megneto:xyz:1",
+              "@type": "Object",
+              "displayName": {
+                "en": "Object"
+              },
+              "fields": [
+                {
+                  "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:megneto:xyz:X:1",
+                  "@type": "SchemaField",
+                  "displayName": {
+                    "en": "X"
+                  },
+                  "name": "X",
+                  "schema": "integer"
+                },
+                {
+                  "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:megneto:xyz:Y:1",
+                  "@type": "SchemaField",
+                  "displayName": {
+                    "en": "Y"
+                  },
+                  "name": "Y",
+                  "schema": "integer"
+                },
+                {
+                  "@id": "urn:iotPnpPublicPreviewStSensor:SensorTileBox:megneto:xyz:Z:1",
+                  "@type": "SchemaField",
+                  "displayName": {
+                    "en": "Z"
+                  },
+                  "name": "Z",
+                  "schema": "integer"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "displayName": {
+    "en": "SensorTile.Box"
+  },
+  "@context": [
+    "http://azureiot.com/v1/contexts/IoTModel.json"
+  ]
+}
